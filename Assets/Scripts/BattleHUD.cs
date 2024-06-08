@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class BattleHUD : MonoBehaviour
 {
 
-	public Text nameText;
-	public Text levelText;
+	public TMP_Text nameText;
+	public TMP_Text levelText;
 	public Slider hpSlider;
 
 	public void SetHUD(Unit unit)
@@ -22,5 +22,5 @@ public class BattleHUD : MonoBehaviour
 	{
 		hpSlider.value = hp;
 	}
-
+    
 }
