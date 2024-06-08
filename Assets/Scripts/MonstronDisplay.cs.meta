@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: bfb4b2310f21460debc435ada2017867
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - monstron: {fileID: 11400000, guid: b94056c78d7071d3780829fa669539d3, type: 2}
+  - spriteRenderer: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
