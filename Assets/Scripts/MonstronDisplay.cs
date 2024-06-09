@@ -1,13 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonstronDisplay : MonoBehaviour
 {
     public Monstron monstron;
-    public SpriteRenderer spriteRenderer;
+    public Image image;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spriteRenderer.sprite = monstron.sprite;
+        image.sprite = monstron.sprite;
     }
 
     // Update is called once per frame
