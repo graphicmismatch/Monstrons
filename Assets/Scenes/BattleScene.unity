@@ -3369,7 +3369,7 @@ MonoBehaviour:
   mv2: {fileID: 1480603112}
   player: {fileID: 2137757145}
   enemy: {fileID: 624848373}
-  atkPanel: {fileID: 1875507131}
+  atkPanel: {fileID: 359782313}
   playerUnit: {fileID: 2137757147}
   enemyUnit: {fileID: 624848375}
   playerh: 0
