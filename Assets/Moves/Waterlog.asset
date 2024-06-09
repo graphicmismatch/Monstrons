@@ -9,13 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d569e49c1f15913caaffd41c537b904, type: 3}
-  m_Name: Monstron
+  m_Script: {fileID: 11500000, guid: b37ecd05482309f48bc1bc1359da5bc0, type: 3}
+  m_Name: Waterlog
   m_EditorClassIdentifier: 
-  monster_name: 
-  health: 0
-  speed: 0
-  defense: 0
-  attack: 0
-  monster_type: 0
-  sprite: {fileID: 0}
+  movename: Waterlog
+  mindamage: 10
+  maxdamage: 20
+  type: 1
+  critChance: 5
+  minHeal: 5
+  maxHeal: 10
+  poisonChance: 0
+  isLifedrain: 0

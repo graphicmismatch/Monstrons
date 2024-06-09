@@ -1,11 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 [System.Serializable]
-public enum Type
+public enum MonType
 {
-    T1,
-    T2,
-    T3
+    Fire,Water,Dark,Energy,Rock,Poison
 }
 [CreateAssetMenu(fileName = "Monstron", menuName = "Scriptable Objects/Monstron")]
 public class Monstron : ScriptableObject
@@ -17,7 +15,7 @@ public class Monstron : ScriptableObject
     public int defense;
     public int attack;
 
-    public Type monster_type;
-    public Sprite sprite;
-
+    public MonType monster_type;
+    public Sprite back;
+    public Sprite front;
 }

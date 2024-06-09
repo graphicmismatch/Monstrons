@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d569e49c1f15913caaffd41c537b904, type: 3}
+  m_Name: MysticWhisperer
+  m_EditorClassIdentifier: 
+  monster_name: Mystic Whisperer
+  health: 0
+  speed: 0
+  defense: 0
+  attack: 0
+  monster_type: 2
+  back: {fileID: 21300000, guid: 8c0935c63247d554f9240a5c99fc26d1, type: 3}
+  front: {fileID: 21300000, guid: 10bf646ae0500d94a84bde0f80c8cd53, type: 3}

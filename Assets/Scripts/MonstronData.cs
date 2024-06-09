@@ -1,15 +1,21 @@
 using UnityEngine;
 
-public struct Move {
-    int damage;
-    float chance;
-}
 
+
+[System.Serializable]
 public class MonstronData
 {
     public int id;
     public int level;
     public int exp;
-    public Move[] moves;
     
+    public int healthbuff;
+    public int speedbuff;
+    public int defensebuff;
+    public int attackbuff;
+
+    public int move1;
+    public int move2;
+
+    public bool isActive;
 }

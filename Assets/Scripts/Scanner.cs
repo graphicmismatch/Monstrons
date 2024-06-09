@@ -3,6 +3,12 @@ using ZXing;
 using ZXing.QrCode;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class ScanEvent : UnityEvent<Result>
+{
+}
 public class Scanner : MonoBehaviour
 {
     private WebCamTexture camTexture;
@@ -11,7 +17,8 @@ public class Scanner : MonoBehaviour
     bool shouldEncodeNow;
     string LastResult = "https://graphicmismatch.com";
     private int cameraNo;
-    public TMP_Text t;
+    
+    public ScanEvent scanned;
     void Start()
     {
         cameraNo = 0;
@@ -114,9 +121,7 @@ public class Scanner : MonoBehaviour
             var result = barcodeReader.Decode(c, w, h);
             if (result != null)
             {
-                LastResult = result.Text;
-                shouldEncodeNow = true;
-                print(result.Text);
+                scanned.Invoke(result);
             }
 
         }
@@ -124,9 +129,5 @@ public class Scanner : MonoBehaviour
         {
         }
 
-    }
-    private void Update()
-    {
-        t.text = LastResult;
     }
 }

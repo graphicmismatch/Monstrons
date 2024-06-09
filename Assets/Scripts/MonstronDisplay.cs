@@ -8,7 +8,7 @@ public class MonstronDisplay : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        image.sprite = monstron.sprite;
+        image.sprite = monstron.front;
     }
 
     // Update is called once per frame
