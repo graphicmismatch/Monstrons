@@ -7,12 +7,15 @@ public class Unit : MonoBehaviour
 
 	public string unitName;
 	public int unitLevel;
-
-	public int damage;
-
 	public int maxHP;
 	public int currentHP;
 
+	public void init(string n, int l, int max) {
+		unitName = n;
+		unitLevel = l;
+		maxHP = max;
+		currentHP = max;
+	}
 	public bool TakeDamage(int dmg)
 	{
 		currentHP -= dmg;

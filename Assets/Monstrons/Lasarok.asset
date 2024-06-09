@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Lasarok
   m_EditorClassIdentifier: 
   monster_name: Lasarok
-  health: 0
-  speed: 0
-  defense: 0
-  attack: 0
+  health: 100
+  speed: 10
+  defense: 10
+  attack: 10
   monster_type: 1
   back: {fileID: 21300000, guid: aa8403e3a56969f4bba84d010ddfa46a, type: 3}
   front: {fileID: 21300000, guid: 956047f3f79c9cd4fbef760062cf275f, type: 3}

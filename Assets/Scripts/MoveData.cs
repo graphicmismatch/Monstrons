@@ -4,8 +4,8 @@ using UnityEngine;
 public class MoveData : ScriptableObject
 {
     public string movename;
-    public float mindamage;
-    public float maxdamage;
+    public int mindamage;
+    public int maxdamage;
     
     
     public int minHeal;

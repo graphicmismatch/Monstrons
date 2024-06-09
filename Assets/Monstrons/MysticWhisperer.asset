@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: MysticWhisperer
   m_EditorClassIdentifier: 
   monster_name: Mystic Whisperer
-  health: 0
-  speed: 0
-  defense: 0
-  attack: 0
+  health: 100
+  speed: 10
+  defense: 10
+  attack: 10
   monster_type: 2
   back: {fileID: 21300000, guid: 8c0935c63247d554f9240a5c99fc26d1, type: 3}
   front: {fileID: 21300000, guid: 10bf646ae0500d94a84bde0f80c8cd53, type: 3}

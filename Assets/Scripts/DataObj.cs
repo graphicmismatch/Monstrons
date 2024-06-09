@@ -19,41 +19,43 @@ public class DataObj : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        SavePath = Application.persistentDataPath + "/GameSaves/save.file";
-        if (File.Exists(SavePath))
+        DontDestroyOnLoad(this);
+        if (inst == null)
         {
-            if (File.ReadAllText(SavePath) != "")
+            inst = this;
+            myMonstrons = new List<MonstronData>();
+            myItems = new List<int>();
+            SavePath = Application.persistentDataPath + "/GameSaves/save.file";
+            if (File.Exists(SavePath))
             {
-                PlayerData p = new PlayerData();
-                p = (PlayerData)JsonConvert.DeserializeObject((File.ReadAllText(SavePath)));
-                myMonstrons = new List<MonstronData>(p.myMonstrons);
-                myItems = new List<int>(p.items);
-                foreach (MonstronData md in myMonstrons) {
-                    if (md.isActive) {
-                        activeMon = myMonstrons.IndexOf(md);
-                        break;
-                    }
+                if (File.ReadAllText(SavePath) != "")
+                {
+                    PlayerData p = new PlayerData();                    
+                    JsonConvert.PopulateObject(Base64Decode(File.ReadAllText(SavePath)),p);
+                    myMonstrons = new List<MonstronData>(p.myMonstrons);
+                    myItems = new List<int>(p.items);
+                    activeMon = p.activeMon;
                 }
             }
-        }
-        else
-        {
-            if (!Directory.Exists(Application.persistentDataPath + "/GameSaves"))
+            else
             {
-                Directory.CreateDirectory(Application.persistentDataPath + "/GameSaves");
+                if (!Directory.Exists(Application.persistentDataPath + "/GameSaves"))
+                {
+                    Directory.CreateDirectory(Application.persistentDataPath + "/GameSaves");
+                }
+                File.Create(SavePath);
+                myMonstrons = new List<MonstronData>();
             }
-            File.Create(SavePath);
-            myMonstrons = new List<MonstronData>();
+            monstronCount = monstrons.Length;
+            moveCount = moves.Length;
         }
-        monstronCount = monstrons.Length;
-        moveCount = moves.Length;
-        DontDestroyOnLoad(this);
-        if (inst == null) {
-            inst = this;
-        }
-        if (inst != this) {
+        if (inst != this)
+        {
             Destroy(this);
         }
+
+        
+        
     }
     public static string Base64Encode(string plainText)
     {
@@ -68,8 +70,7 @@ public class DataObj : MonoBehaviour
     public static void AddMon(MonstronData md) {
         myMonstrons.Add(md);
         if (activeMon == -1) {
-            activeMon = myMonstrons.Count - 1;
-            myMonstrons[myMonstrons.Count-1].isActive = true;
+            activeMon = 0;
         }
         inst.Save();
     }
@@ -80,9 +81,8 @@ public class DataObj : MonoBehaviour
     }
 
     public static void changeActive(int ind) {
-        myMonstrons[ind].isActive = true;
-        myMonstrons[activeMon].isActive = false;
         activeMon = ind;
+        inst.Save();
     }
     public void Save() {
        
@@ -97,6 +97,7 @@ public class DataObj : MonoBehaviour
         PlayerData p = new PlayerData();
         p.items = myItems.ToArray();
         p.myMonstrons = myMonstrons.ToArray();
+        p.activeMon = activeMon;
         File.WriteAllText(SavePath, Base64Encode(JsonConvert.SerializeObject(p)));
     }
     // Update is called once per frame

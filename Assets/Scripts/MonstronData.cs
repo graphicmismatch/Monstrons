@@ -17,5 +17,4 @@ public class MonstronData
     public int move1;
     public int move2;
 
-    public bool isActive;
 }

@@ -78,8 +78,8 @@ public class ScanInferencer : MonoBehaviour
         }
         else if (c == 1)
         {
-            encounter.text = "You found an Item!";
-            SceneToLoad = "GetItemScene";
+            encounter.text = "You found a Monstron!";
+            SceneToLoad = "GetMonstronScene";
             // get item
         } 
         else if(c == 2) {

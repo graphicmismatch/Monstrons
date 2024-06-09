@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Stoneclaw
   m_EditorClassIdentifier: 
   monster_name: Stoneclaw
-  health: 0
-  speed: 0
-  defense: 0
-  attack: 0
+  health: 100
+  speed: 10
+  defense: 10
+  attack: 10
   monster_type: 4
   back: {fileID: 21300000, guid: ac06f3fa9c6de85438918a0b18f5ea78, type: 3}
   front: {fileID: 21300000, guid: f843007d6f91bdb41803cbc6ca8c5e10, type: 3}
